@@ -1,8 +1,5 @@
 ﻿using Auto_ordrer_bot.Models;
 using Newtonsoft.Json.Linq;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
 using scrapingTemplateV51.Models;
 using scrapingTemplateV51;
 using System;
@@ -139,7 +136,21 @@ namespace Auto_ordrer_bot.Services
             //var authContextID = doc.DocumentNode.SelectSingleNode("//input[@id='auth-context-id']").GetAttributeValue("value", "").Trim();
             var otpRef = doc.DocumentNode.SelectSingleNode("//span[@id='otp-reference-no']").GetAttributeValue("value", "").Trim();
             //var otp = await OtpSerVice.GetOtp(conf.EmailUserName, conf.EmailPassword, "ECOM_632063474876");
-            var otp = await OtpSerVice.GetOtp(conf.EmailUserName, conf.EmailPassword, otpRef);
+            var otp = "";
+            try
+            {
+                otp = await OtpSerVice.GetOtp(conf, otpRef);
+            }
+            catch (Exception ex)
+            {
+                mainForm.ErrorLog("Error" + ex.ToString());
+                return;
+            }
+            if (otp == "N/A")
+            {
+                mainForm.ErrorLog($"We could not find the otp code, we need to verify the email format of this reference \"{otpRef}\"");
+                return;
+            }
             mainForm.NormalLog($"OTP Reference:{otpRef} ==> OTP: {otp}");
             //var json = "{\"challengeResponse\":\"123456\",\"authContextID\":\"" + authContextID + "\"," + "\"factorNumber\":\"1\",\"authPlanID\":\"4\",\"authType\":\"indusind_otp\"}";
             //var json = "{\"challengeResponse\":\"" + authContextID + "\"," + "\"authContextID\":\"" + authContextID + "\"," + "\"factorNumber\":\"1\",\"authPlanID\":\"4\",\"authType\":\"indusind_otp\"}";

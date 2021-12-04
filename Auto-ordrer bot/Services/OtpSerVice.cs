@@ -1,4 +1,5 @@
 ﻿using AE.Net.Mail;
+using Auto_ordrer_bot.Models;
 using Limilabs.Client.IMAP;
 using Limilabs.Mail;
 using System;
@@ -12,13 +13,13 @@ namespace Auto_ordrer_bot.Services
 {
     public static class OtpSerVice
     {
-        async public static Task<string> GetOtp(string email, string password, string otpRef)
+        async public static Task<string> GetOtp(Config conf, string otpRef)
         {
-            var otp = "";
+            var otp = "N/A";
             try
             {
                 //var uri=new Uri("imap.gmail.com");
-                var client = new ImapClient("imap.gmail.com", email, password, AuthMethods.Login, 993, true);
+                var client = new ImapClient("imap.gmail.com", conf.EmailUserName, conf.EmailPassword, AuthMethods.Login, 993, true);
                 //client.IdleTimeout = 30;
                 var xx = client.SelectMailbox("INBOX");
                 var messages = new List<AE.Net.Mail.MailMessage>();

@@ -36,9 +36,9 @@ namespace scrapingTemplateV51
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.startB = new MetroFramework.Controls.MetroButton();
             this.loadInputB = new MetroFramework.Controls.MetroButton();
             this.ConfigI = new MetroFramework.Controls.MetroTextBox();
-            this.startB = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.DebugT = new System.Windows.Forms.RichTextBox();
@@ -60,14 +60,14 @@ namespace scrapingTemplateV51
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(20, 557);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(941, 57);
+            this.panel3.Size = new System.Drawing.Size(750, 57);
             this.panel3.TabIndex = 15;
             // 
             // ProgressB
             // 
             this.ProgressB.Location = new System.Drawing.Point(4, 35);
             this.ProgressB.Name = "ProgressB";
-            this.ProgressB.Size = new System.Drawing.Size(933, 14);
+            this.ProgressB.Size = new System.Drawing.Size(742, 14);
             this.ProgressB.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ProgressB.TabIndex = 4;
             // 
@@ -91,7 +91,7 @@ namespace scrapingTemplateV51
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(941, 497);
+            this.metroTabControl1.Size = new System.Drawing.Size(750, 497);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTabControl1.TabIndex = 16;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -108,7 +108,7 @@ namespace scrapingTemplateV51
             this.metroTabPage1.HorizontalScrollbarSize = 0;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 41);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(933, 452);
+            this.metroTabPage1.Size = new System.Drawing.Size(742, 452);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Options";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -124,12 +124,24 @@ namespace scrapingTemplateV51
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(933, 452);
+            this.panel2.Size = new System.Drawing.Size(742, 452);
             this.panel2.TabIndex = 14;
+            // 
+            // startB
+            // 
+            this.startB.Location = new System.Drawing.Point(325, 371);
+            this.startB.Name = "startB";
+            this.startB.Size = new System.Drawing.Size(111, 43);
+            this.startB.Style = MetroFramework.MetroColorStyle.Orange;
+            this.startB.TabIndex = 23;
+            this.startB.Text = "Start";
+            this.startB.UseSelectable = true;
+            this.startB.UseStyleColors = true;
+            this.startB.Click += new System.EventHandler(this.StartB_Click_1);
             // 
             // loadInputB
             // 
-            this.loadInputB.Location = new System.Drawing.Point(117, 115);
+            this.loadInputB.Location = new System.Drawing.Point(38, 114);
             this.loadInputB.Name = "loadInputB";
             this.loadInputB.Size = new System.Drawing.Size(131, 23);
             this.loadInputB.Style = MetroFramework.MetroColorStyle.Orange;
@@ -154,7 +166,7 @@ namespace scrapingTemplateV51
             this.ConfigI.CustomButton.UseSelectable = true;
             this.ConfigI.CustomButton.Visible = false;
             this.ConfigI.Lines = new string[0];
-            this.ConfigI.Location = new System.Drawing.Point(293, 115);
+            this.ConfigI.Location = new System.Drawing.Point(214, 114);
             this.ConfigI.MaxLength = 32767;
             this.ConfigI.Name = "ConfigI";
             this.ConfigI.PasswordChar = '\0';
@@ -170,18 +182,6 @@ namespace scrapingTemplateV51
             this.ConfigI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ConfigI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // startB
-            // 
-            this.startB.Location = new System.Drawing.Point(393, 366);
-            this.startB.Name = "startB";
-            this.startB.Size = new System.Drawing.Size(111, 43);
-            this.startB.Style = MetroFramework.MetroColorStyle.Orange;
-            this.startB.TabIndex = 23;
-            this.startB.Text = "Start";
-            this.startB.UseSelectable = true;
-            this.startB.UseStyleColors = true;
-            this.startB.Click += new System.EventHandler(this.StartB_Click_1);
-            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.metroPanel2);
@@ -190,7 +190,7 @@ namespace scrapingTemplateV51
             this.metroTabPage2.HorizontalScrollbarSize = 0;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 41);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(933, 452);
+            this.metroTabPage2.Size = new System.Drawing.Size(742, 452);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Logs";
             this.metroTabPage2.VerticalScrollbarBarColor = false;
@@ -206,7 +206,7 @@ namespace scrapingTemplateV51
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(933, 452);
+            this.metroPanel2.Size = new System.Drawing.Size(742, 452);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -223,7 +223,7 @@ namespace scrapingTemplateV51
             this.DebugT.Margin = new System.Windows.Forms.Padding(4);
             this.DebugT.Name = "DebugT";
             this.DebugT.ReadOnly = true;
-            this.DebugT.Size = new System.Drawing.Size(933, 452);
+            this.DebugT.Size = new System.Drawing.Size(742, 452);
             this.DebugT.TabIndex = 1;
             this.DebugT.Text = "";
             this.DebugT.WordWrap = false;
@@ -245,7 +245,7 @@ namespace scrapingTemplateV51
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 634);
+            this.ClientSize = new System.Drawing.Size(790, 634);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel3);
